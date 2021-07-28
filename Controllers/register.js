@@ -1,0 +1,1 @@
+export const handleRegister = (req, res, db, bcrypt) => 
