@@ -29,7 +29,8 @@ app.get('/', (req, res) => {
         .returning('*')
         .then(user => {
             res.json(user);
-        });
+        })
+        .catch(err => console.log('Error'))
 })
 
 app.post('/signin', (req, res) => {
@@ -73,6 +74,7 @@ app.post('/register', (req, res) => {
           .then(user => {
             res.json(user[0]);
           })
+          .catch(err => console.log('Error'))
       })
       .then(trx.commit)
       .catch(trx.rollback)
